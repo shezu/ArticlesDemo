@@ -16,40 +16,32 @@ import Foundation
 
 // MARK: - Article
 struct Article: Codable {
-    let uri: String
-    let url: String
-    let id, assetID: Int
-    let source, publishedDate, updated, section: String
-    let subsection, nytdsection, adxKeywords: String
-    let column: String?
-    let byline, type, title, abstract: String
-    let desFacet: [String]
-    let orgFacet, perFacet, geoFacet: [String]
+    let id : Int
+    let byline, publishedDate, title : String
     let media: [Media]
-    let etaID: Int
 
     enum CodingKeys: String, CodingKey {
-        case uri, url, id
-        case assetID = "asset_id"
-        case source
+        case id
         case publishedDate = "published_date"
-        case updated, section, subsection, nytdsection
-        case adxKeywords = "adx_keywords"
-        case column, byline, type, title, abstract
-        case desFacet = "des_facet"
-        case orgFacet = "org_facet"
-        case perFacet = "per_facet"
-        case geoFacet = "geo_facet"
+        case byline, title
         case media
-        case etaID = "eta_id"
     }
 }
 
 // MARK: - Media
 struct Media: Codable {
-    let type, subtype, caption, copyright: String
-    let approvedForSyndication: Int
-    let mediaMetadata: [MediaSubItem]
+    let type, subtype, caption, copyright: String?
+    let approvedForSyndication: Int?
+    let mediaMetadata: [MediaMetaDataItem]
+    
+    init(type: String? = nil, subtype: String? = nil, caption: String? = nil, copyright: String? = nil, approvedForSyndication: Int? = nil, mediaMetadata: [MediaMetaDataItem]) {
+        self.type = type
+        self.subtype = subtype
+        self.caption = caption
+        self.copyright = copyright
+        self.approvedForSyndication = approvedForSyndication
+        self.mediaMetadata = mediaMetadata
+    }
 
     enum CodingKeys: String, CodingKey {
         case type, subtype, caption, copyright
@@ -59,7 +51,7 @@ struct Media: Codable {
 }
 
 // MARK: - MediaMetadatum
-struct MediaSubItem: Codable {
+struct MediaMetaDataItem: Codable {
     let url: String
     let format: String
     let height, width: Int
