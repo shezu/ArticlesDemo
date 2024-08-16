@@ -7,8 +7,6 @@
 
 import Foundation
 
-protocol ArticleRepository {
-    func fetchArticles(completion: @escaping (Result<[Article], Error>) -> Void)
-    func saveArticles(_ articles: [Article], completion: @escaping (Result<Void, Error>) -> Void)
-    func getSavedArticles() -> [Article]
+protocol ArticleRepositoryProtocol {
+    func fetchArticles() async throws -> [Article] 
 }

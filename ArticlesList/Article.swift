@@ -19,6 +19,14 @@ struct Article: Codable {
     let id : Int
     let byline, publishedDate, title : String
     let media: [Media]
+    
+    var thumbUrl : URL? {
+        if let urlStr = media.first(where: { $0.type == "image"})?.mediaMetadata.first?.url ,
+           let url = URL(string: urlStr) {
+            return url
+        }
+        return nil
+    }
 
     enum CodingKeys: String, CodingKey {
         case id
