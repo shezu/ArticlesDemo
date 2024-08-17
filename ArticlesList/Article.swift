@@ -7,18 +7,12 @@
 
 import Foundation
 
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let article = try? JSONDecoder().decode(Article.self, from: jsonData)
-
-import Foundation
-
 // MARK: - Article
 struct Article: Codable {
     let id : Int
-    let byline, publishedDate, title : String
+    let byline, publishedDate, title, abstract : String
     let media: [Media]
+    let adx_keywords: String
     
     var thumbUrl : URL? {
         if let urlStr = media.first(where: { $0.type == "image"})?.mediaMetadata.first?.url ,
@@ -27,12 +21,32 @@ struct Article: Codable {
         }
         return nil
     }
+    var imageUrl : URL? {
+        if let urlStr = media.first(where: { $0.type == "image"})?.mediaMetadata.last?.url ,
+           let url = URL(string: urlStr) {
+            return url
+        }
+        return nil
+    }
+    var date : String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        if let date = formatter.date(from: publishedDate) {
+            formatter.dateStyle = .medium
+            return formatter.string(from: date)
+        }
+        return publishedDate
+    }
+    var keywords : String {
+        return adx_keywords.replacingOccurrences(of: ";", with: ", ")
+    }
 
     enum CodingKeys: String, CodingKey {
         case id
         case publishedDate = "published_date"
-        case byline, title
+        case byline, title, abstract
         case media
+        case adx_keywords
     }
 }
 

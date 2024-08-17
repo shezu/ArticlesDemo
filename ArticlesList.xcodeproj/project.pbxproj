@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520A6F342C707B500018617A /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A6F332C707B500018617A /* ArticleDetailViewController.swift */; };
 		5249AE692C6FA90500283A08 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5249AE682C6FA90500283A08 /* ImageCache.swift */; };
 		5249AE6B2C6FAB5E00283A08 /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5249AE6A2C6FAB5D00283A08 /* UIImageView+Cache.swift */; };
 		5249AE6D2C6FB74500283A08 /* ArticleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5249AE6C2C6FB74500283A08 /* ArticleRepository.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		520A6F332C707B500018617A /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		5249AE682C6FA90500283A08 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		5249AE6A2C6FAB5D00283A08 /* UIImageView+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
 		5249AE6C2C6FB74500283A08 /* ArticleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRepository.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				528F5F6A2C6E711200A75A84 /* AppDelegate.swift */,
 				528F5F6E2C6E711200A75A84 /* ArticleListViewController.swift */,
+				520A6F332C707B500018617A /* ArticleDetailViewController.swift */,
 				528F5F9A2C6E720A00A75A84 /* ArticleRepositoryProtocol.swift */,
 				528F5F9C2C6E745100A75A84 /* Article.swift */,
 				5249AE682C6FA90500283A08 /* ImageCache.swift */,
@@ -296,6 +299,7 @@
 				528F5F9B2C6E720A00A75A84 /* ArticleRepositoryProtocol.swift in Sources */,
 				5249AE752C6FBB6700283A08 /* ArticleCell.swift in Sources */,
 				5249AE6B2C6FAB5E00283A08 /* UIImageView+Cache.swift in Sources */,
+				520A6F342C707B500018617A /* ArticleDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
