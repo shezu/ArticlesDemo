@@ -9,8 +9,8 @@ import UIKit
 
 class ArticleListViewController: UIViewController {
     
-    private let tableView = UITableView()
-    private var articles: [Article] = []
+    let tableView = UITableView()
+    var articles: [Article] = []
     private let repository: ArticleRepository = ArticleRepository(networkManager: NetworkManager.shared)
     
     override func viewDidLoad() {

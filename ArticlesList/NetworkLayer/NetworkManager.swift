@@ -14,10 +14,6 @@ enum NetworkError: Error {
     case unknown
 }
 
-protocol NetworkManagerProtocol {
-    func getRequest<T: Decodable>(urlString: String, responseType: T.Type) async throws -> T
-}
-
 class NetworkManager : NetworkManagerProtocol {
     
     static let shared = NetworkManager()

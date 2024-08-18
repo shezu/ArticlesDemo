@@ -30,6 +30,6 @@ class ArticleCell: UITableViewCell {
         }
         self.titleLbl.text = article.title
         self.authorLbl.text = article.byline
-        self.dateLbl.text = article.publishedDate
+        self.dateLbl.text = article.date
     }
 }
