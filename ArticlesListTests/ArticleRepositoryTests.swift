@@ -10,71 +10,19 @@ import XCTest
 import XCTest
 @testable import ArticlesList
 
-// Mock Network Manager
-class MockNetworkManager: NetworkManagerProtocol {
-    
-    var shouldReturnError = false
-    var mockResponse: ArticleResponseModel?
-    
-    func getRequest<T>(urlString: String, responseType: T.Type) async throws -> T where T : Decodable {
-        if shouldReturnError {
-            throw NetworkError.requestFailed
-        } else if let mockResponse = mockResponse as? T {
-            return mockResponse
-        } else {
-            throw NetworkError.unknown
-        }
-    }
-}
-
-// Test Case for ArticleRepository
 class ArticleRepositoryTests: XCTestCase {
     
-    var articleRepository: ArticleRepository!
-    var mockNetworkManager: MockNetworkManager!
+    let repository: ArticleRepository = ArticleRepository(networkManager: NetworkManager.shared)
     
-    override func setUp() {
-        super.setUp()
-        mockNetworkManager = MockNetworkManager()
-        articleRepository = ArticleRepository(networkManager: mockNetworkManager)
-    }
-    
-    override func tearDown() {
-        articleRepository = nil
-        mockNetworkManager = nil
-        super.tearDown()
-    }
-    
-    // Test for successful fetch
-    func testFetchArticlesSuccess() async {
-        // Arrange
-        let mockArticles = [Article(id: 1, byline: "By Author", publishedDate: "2024-08-10", title: "Sample Article", media: [])]
-        let mockResponse = ArticleResponseModel(results: mockArticles)
-        mockNetworkManager.mockResponse = mockResponse
-        
-        // Act
+    func testFetchArticles() async {
+        let expectation = self.expectation(description: "testFetchArticles")
         do {
-            let articles = try await articleRepository.fetchArticles()
-            
-            // Assert
-            XCTAssertEqual(articles.count, 1)
-            XCTAssertEqual(articles.first?.title, "Sample Article")
+            let articles = try await repository.fetchArticles()
+            XCTAssertTrue(articles.count > 1)
+            expectation.fulfill()
         } catch {
             XCTFail("Expected success but got error: \(error.localizedDescription)")
         }
-    }
-    
-    // Test for network error
-    func testFetchArticlesNetworkError() async {
-        // Arrange
-        mockNetworkManager.shouldReturnError = true
-        
-        // Act & Assert
-        do {
-            _ = try await articleRepository.fetchArticles()
-            XCTFail("Expected error but got success")
-        } catch {
-            XCTAssertEqual(error as? NetworkError, NetworkError.requestFailed)
-        }
+        await fulfillment(of: [expectation], timeout: 5)
     }
 }

@@ -15,6 +15,10 @@
 		5249AE712C6FBAF100283A08 /* UITableView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5249AE702C6FBAF100283A08 /* UITableView+Loading.swift */; };
 		5249AE742C6FBB6700283A08 /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5249AE732C6FBB6700283A08 /* ArticleCell.xib */; };
 		5249AE752C6FBB6700283A08 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5249AE722C6FBB6700283A08 /* ArticleCell.swift */; };
+		5262D4EF2C72682000AE3AB9 /* ArticleModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262D4EE2C72682000AE3AB9 /* ArticleModelTest.swift */; };
+		5262D4F12C72773100AE3AB9 /* ArticleListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262D4F02C72773100AE3AB9 /* ArticleListViewControllerTest.swift */; };
+		5262D4F32C727A9800AE3AB9 /* ArticleDetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262D4F22C727A9800AE3AB9 /* ArticleDetailViewControllerTest.swift */; };
+		5262D4F82C727DB700AE3AB9 /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5262D4F72C727DB700AE3AB9 /* NetworkManagerProtocol.swift */; };
 		526918C82C6FDD250042494A /* ArticleRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526918C72C6FDD250042494A /* ArticleRepositoryTests.swift */; };
 		528F5F6B2C6E711200A75A84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528F5F6A2C6E711200A75A84 /* AppDelegate.swift */; };
 		528F5F6F2C6E711200A75A84 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528F5F6E2C6E711200A75A84 /* ArticleListViewController.swift */; };
@@ -54,6 +58,10 @@
 		5249AE702C6FBAF100283A08 /* UITableView+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Loading.swift"; sourceTree = "<group>"; };
 		5249AE722C6FBB6700283A08 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		5249AE732C6FBB6700283A08 /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
+		5262D4EE2C72682000AE3AB9 /* ArticleModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModelTest.swift; sourceTree = "<group>"; };
+		5262D4F02C72773100AE3AB9 /* ArticleListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewControllerTest.swift; sourceTree = "<group>"; };
+		5262D4F22C727A9800AE3AB9 /* ArticleDetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewControllerTest.swift; sourceTree = "<group>"; };
+		5262D4F72C727DB700AE3AB9 /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
 		526918C72C6FDD250042494A /* ArticleRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRepositoryTests.swift; sourceTree = "<group>"; };
 		528F5F672C6E711200A75A84 /* ArticlesList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArticlesList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528F5F6A2C6E711200A75A84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +104,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5262D4F42C727CFE00AE3AB9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				528F5F6E2C6E711200A75A84 /* ArticleListViewController.swift */,
+				520A6F332C707B500018617A /* ArticleDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5262D4F52C727D0E00AE3AB9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5249AE6A2C6FAB5D00283A08 /* UIImageView+Cache.swift */,
+				5249AE702C6FBAF100283A08 /* UITableView+Loading.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5262D4F62C727D8D00AE3AB9 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				528F5F9A2C6E720A00A75A84 /* ArticleRepositoryProtocol.swift */,
+				5249AE6C2C6FB74500283A08 /* ArticleRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		5262D4F92C727DBF00AE3AB9 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				5249AE6E2C6FB7F600283A08 /* NetworkManager.swift */,
+				5262D4F72C727DB700AE3AB9 /* NetworkManagerProtocol.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		5262D4FA2C727DCE00AE3AB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5249AE722C6FBB6700283A08 /* ArticleCell.swift */,
+				5249AE732C6FBB6700283A08 /* ArticleCell.xib */,
+				528F5F702C6E711200A75A84 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5262D4FB2C727DDD00AE3AB9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				528F5F9C2C6E745100A75A84 /* Article.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5262D4FC2C727E0400AE3AB9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5249AE682C6FA90500283A08 /* ImageCache.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		528F5F5E2C6E711200A75A84 = {
 			isa = PBXGroup;
 			children = (
@@ -120,18 +190,13 @@
 			isa = PBXGroup;
 			children = (
 				528F5F6A2C6E711200A75A84 /* AppDelegate.swift */,
-				528F5F6E2C6E711200A75A84 /* ArticleListViewController.swift */,
-				520A6F332C707B500018617A /* ArticleDetailViewController.swift */,
-				528F5F9A2C6E720A00A75A84 /* ArticleRepositoryProtocol.swift */,
-				528F5F9C2C6E745100A75A84 /* Article.swift */,
-				5249AE682C6FA90500283A08 /* ImageCache.swift */,
-				5249AE6A2C6FAB5D00283A08 /* UIImageView+Cache.swift */,
-				5249AE702C6FBAF100283A08 /* UITableView+Loading.swift */,
-				5249AE6C2C6FB74500283A08 /* ArticleRepository.swift */,
-				5249AE6E2C6FB7F600283A08 /* NetworkManager.swift */,
-				5249AE722C6FBB6700283A08 /* ArticleCell.swift */,
-				5249AE732C6FBB6700283A08 /* ArticleCell.xib */,
-				528F5F702C6E711200A75A84 /* Main.storyboard */,
+				5262D4FB2C727DDD00AE3AB9 /* Models */,
+				5262D4FA2C727DCE00AE3AB9 /* Views */,
+				5262D4F42C727CFE00AE3AB9 /* Controllers */,
+				5262D4F62C727D8D00AE3AB9 /* Repositories */,
+				5262D4F92C727DBF00AE3AB9 /* NetworkLayer */,
+				5262D4F52C727D0E00AE3AB9 /* Extensions */,
+				5262D4FC2C727E0400AE3AB9 /* Helpers */,
 				528F5F732C6E711400A75A84 /* Assets.xcassets */,
 				528F5F752C6E711400A75A84 /* LaunchScreen.storyboard */,
 				528F5F782C6E711400A75A84 /* Info.plist */,
@@ -144,6 +209,9 @@
 			children = (
 				528F5F812C6E711400A75A84 /* ArticlesListTests.swift */,
 				526918C72C6FDD250042494A /* ArticleRepositoryTests.swift */,
+				5262D4EE2C72682000AE3AB9 /* ArticleModelTest.swift */,
+				5262D4F02C72773100AE3AB9 /* ArticleListViewControllerTest.swift */,
+				5262D4F22C727A9800AE3AB9 /* ArticleDetailViewControllerTest.swift */,
 			);
 			path = ArticlesListTests;
 			sourceTree = "<group>";
@@ -299,6 +367,7 @@
 				528F5F9B2C6E720A00A75A84 /* ArticleRepositoryProtocol.swift in Sources */,
 				5249AE752C6FBB6700283A08 /* ArticleCell.swift in Sources */,
 				5249AE6B2C6FAB5E00283A08 /* UIImageView+Cache.swift in Sources */,
+				5262D4F82C727DB700AE3AB9 /* NetworkManagerProtocol.swift in Sources */,
 				520A6F342C707B500018617A /* ArticleDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,7 +377,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				526918C82C6FDD250042494A /* ArticleRepositoryTests.swift in Sources */,
+				5262D4F12C72773100AE3AB9 /* ArticleListViewControllerTest.swift in Sources */,
 				528F5F822C6E711400A75A84 /* ArticlesListTests.swift in Sources */,
+				5262D4EF2C72682000AE3AB9 /* ArticleModelTest.swift in Sources */,
+				5262D4F32C727A9800AE3AB9 /* ArticleDetailViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

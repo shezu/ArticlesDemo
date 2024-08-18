@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol NetworkManagerProtocol {
+    func getRequest<T: Decodable>(urlString: String, responseType: T.Type) async throws -> T
+}
