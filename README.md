@@ -31,7 +31,7 @@ This repository contains an iOS application that fetches and displays a list of 
     ```bash
     Copy code
     open ArticlesDemo.xcodeproj
-    ```bash
+    ```
 
 4. **Run the app:**
 
