@@ -21,7 +21,6 @@ This repository contains an iOS application that fetches and displays a list of 
     ```bash
        git clone https://github.com/shezu/ArticlesDemo.git
        cd ArticlesDemo
-       git checkout master
     ```
 2. **Install Dependencies:**
 
