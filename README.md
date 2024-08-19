@@ -38,7 +38,7 @@ This repository contains an iOS application that fetches and displays a list of 
 
     Select the desired simulator or a connected device and press the Run button in Xcode or use the shortcut Cmd + R.
 
-#Running Tests
+## Running Tests
 
 This project includes unit tests that can be run directly within Xcode.
 
@@ -50,7 +50,7 @@ This project includes unit tests that can be run directly within Xcode.
 
     Test results will be displayed in the Xcode Test Navigator.
 
-#Generating Code Coverage Reports
+## Generating Code Coverage Reports
 
 Code coverage reports provide insight into which parts of your code are exercised by tests.
 
@@ -71,6 +71,6 @@ Code coverage reports provide insight into which parts of your code are exercise
     - Select the latest test report.
     - Choose the Coverage tab to view which files and lines are covered.
 
-#Additional Notes
+## Additional Notes
 The app uses the repository pattern to separate data access logic from the view controllers, promoting clean architecture and testability.
 Network calls are performed asynchronously using Swift's modern async/await pattern.
